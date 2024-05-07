@@ -1,29 +1,40 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 19:49:42 by mesasaki          #+#    #+#             */
+/*   Updated: 2024/05/01 21:42:37 by mesasaki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
- size_t ft_strlen(const char *str) 
- {
-    size_t length = 0;
+#include "libft.h"
 
-    while (str[length] != '\0')
-    {
-        length++;
-    }
-    return length;
+size_t	ft_strlen(const char *str)
+{
+	size_t	length;
+
+	length = 0;
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
 }
 
+// int	main(void)
+// {
+// 	const char	*moji = "abc";
+// 	const char	*moji2 = "\t";
+// 	const char	*moji3 = "\naaaa";
 
-int main() {
-   
-   const char *moji = "abc";
-   const char *moji2 = "\t";
-   const char *moji3 = "\naaaa";
-     printf("library :%zu\n", strlen(moji));
-    printf("zisaku  :%zu\n", ft_strlen(moji));
-    printf("library :%zu\n", strlen(moji2));
-    printf("zisaku  :%zu\n", ft_strlen(moji2));
-    printf("library :%zu\n", strlen(moji3));
-    printf("zisaku  :%zu\n", ft_strlen(moji3));
-
-    return 0;
-}
+// 	printf("library :%zu\n", strlen(moji));
+// 	printf("zisaku  :%zu\n", ft_strlen(moji));
+// 	printf("library :%zu\n", strlen(moji2));
+// 	printf("zisaku  :%zu\n", ft_strlen(moji2));
+// 	printf("library :%zu\n", strlen(moji3));
+// 	printf("zisaku  :%zu\n", ft_strlen(moji3));
+// 	return (0);
+// }

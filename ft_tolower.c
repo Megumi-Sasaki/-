@@ -1,31 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 19:51:09 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/01 21:40:55 by mesasaki         ###   ########.fr       */
+/*   Created: 2024/04/26 18:41:24 by mesasaki          #+#    #+#             */
+/*   Updated: 2024/05/06 20:30:05 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_tolower(int c)
 {
-	return (c >= 32 && c < 127);
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (c - 'A' + 'a');
+	}
+	else
+	{
+		return (c);
+	}
 }
 
 // int	main(void)
 // {
-// 	char ch = '7';
-// 	printf("library :%d\n", isprint('2'));
-// 	printf("zisaku  :%d\n", ft_isprint('2'));
-// 	printf("library :%d\n", isprint('\t'));
-// 	printf("zisaku  :%d\n", ft_isprint('\t'));
-// 	printf("library :%d\n", isprint('\n'));
-// 	printf("zisaku  :%d\n", ft_isprint('\n'));
+// 	char c;
+// 	char d;
+// 	char e;
+// 	char f;
+
+// 	c = 'A';
+// 	d = 'A';
+// 	e = '\0';
+// 	f = '\0';
+
+// 	printf("original: %c\n", tolower(c));
+// 	printf("zisaku: %c\n", ft_tolower(d));
+
+// 	printf("original: %c\n", tolower(e));
+// 	printf("zisaku: %c\n", ft_tolower(f));
 
 // 	return (0);
 // }

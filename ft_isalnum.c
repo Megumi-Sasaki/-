@@ -1,25 +1,41 @@
-#include <ctype.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 19:51:45 by mesasaki          #+#    #+#             */
+/*   Updated: 2024/05/01 21:40:32 by mesasaki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalnum(int c) {
-    return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+#include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0'
+		&& c <= '9');
 }
 
-int main() {
-    char ch = '\n';
+// int	main(void)
+// {
+// 	char ch = '\n';
 
-    printf("library :%d\n", isalnum('2'));
-    printf("zisaku  :%d\n", ft_isalnum('2'));
-    printf("library :%d\n", isalnum('A'));
-    printf("zisaku  :%d\n", ft_isalnum('A'));
-    printf("library :%d\n", isalnum('/'));
-    printf("zisaku  :%d\n", ft_isalnum('/'));
-    
+// 	printf("library :%d\n", isalnum('2'));
+// 	printf("zisaku  :%d\n", ft_isalnum('2'));
+// 	printf("library :%d\n", isalnum('A'));
+// 	printf("zisaku  :%d\n", ft_isalnum('A'));
+// 	printf("library :%d\n", isalnum('/'));
+// 	printf("zisaku  :%d\n", ft_isalnum('/'));
 
-    if (ft_isalnum(ch)) {
-        printf("%c is a digit\n", ch);
-    } else {
-        printf("%c is not a digit\n", ch);
-    }
-    return 0;
-}
+// 	if (ft_isalnum(ch))
+// 	{
+// 		printf("%c is a digit\n", ch);
+// 	}
+// 	else
+// 	{
+// 		printf("%c is not a digit\n", ch);
+// 	}
+// 	return (0);
+// }

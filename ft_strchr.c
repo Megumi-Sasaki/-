@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 19:51:09 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/01 21:40:55 by mesasaki         ###   ########.fr       */
+/*   Created: 2024/04/26 19:24:14 by mesasaki          #+#    #+#             */
+/*   Updated: 2024/05/06 21:33:53 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	return (c >= 32 && c < 127);
+	char	cchar;
+
+	cchar = (char)c;
+	while (*s != '\0')
+	{
+		if (*s == cchar)
+			return ((char *)s);
+		s++;
+	}
+	if (cchar == '\0')
+		return ((char *)s);
+	else
+		return (NULL);
 }
 
 // int	main(void)
 // {
-// 	char ch = '7';
-// 	printf("library :%d\n", isprint('2'));
-// 	printf("zisaku  :%d\n", ft_isprint('2'));
-// 	printf("library :%d\n", isprint('\t'));
-// 	printf("zisaku  :%d\n", ft_isprint('\t'));
-// 	printf("library :%d\n", isprint('\n'));
-// 	printf("zisaku  :%d\n", ft_isprint('\n'));
+// 	char com[20] = "computer program";
+// 	char *ptr;
+// 	char *zisaku_ptr;
+// 	int ch = 'u';
 
+// 	ptr = strchr(com, ch);
+// 	zisaku_ptr = ft_strchr(com, ch);
+// 	printf("original: %s\n", ptr);
+// 	printf("zisaku: %s\n", zisaku_ptr);
 // 	return (0);
 // }
