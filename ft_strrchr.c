@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:10:43 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/06 21:35:46 by mesasaki         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:57:03 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	*ft_strrchr(const char *string, int c)
 	char	cchar;
 
 	count = 0;
-	length = strlen(string);
+	length = ft_strlen(string);
 	cchar = c;
 	while (count <= length)
 	{
 		if (string[length - count] == cchar)
-			return (char *)(string + length - count);
+			return ((char *)(&string[length - count]));
 		count++;
 	}
-	return (0);
+	return (NULL);
 }
 
 // int	main(void)

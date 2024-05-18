@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:14:48 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/06 18:50:31 by mesasaki         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:56:42 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t length)
 	e = 0;
 	if (*little == '\0')
 		return ((char *)big);
-	if (length == 0)
-		return (0);
-	while (big[i] != '\0' && i < length)
+	while (i < length && big[i] != '\0')
 	{
+		e = 0;
 		if (big[i] == little[e])
 		{
-			while (big[i + e] == little[e] && (i + e) < length)
+			while ((i + e) < length && big[i + e] == little[e])
 			{
 				if (little[e + 1] == '\0')
-					return (char *)(big + i);
+					return ((char *)(big + i));
 				e++;
 			}
-			e = 0;
 		}
 		i++;
 	}
@@ -59,7 +57,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t length)
 // 	char a[] = "aiueo";
 
 // 	printf("%s : %s\n", strnstr(a, "", 6), ft_strnstr(a, "", 6));
-// 	// littleをNULLにすると、ヌルポインタとなり、本物はセグフォになる。自作の関数は、あえてチェックしてない（!lit_unsignedをはじいてない）
+// 	// littleをNULLにすると、ヌルポインタとなり、本物はセグフォになる。
+//自作の関数は、あえてチェックしてない（!lit_unsignedをはじいてない）
 // 	printf("%s : %s\n", strnstr(a, "a", 6), ft_strnstr(a, "a", 6));
 // 	printf("%s : %s\n", strnstr(a, "i", 6), ft_strnstr(a, "i", 6));
 // 	printf("%s : %s\n", strnstr(a, "eui", 6), ft_strnstr(a, "eui", 6));

@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 18:41:24 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/18 17:42:15 by mesasaki         ###   ########.fr       */
+/*   Created: 2024/05/15 19:35:47 by mesasaki          #+#    #+#             */
+/*   Updated: 2024/05/18 17:36:17 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-int	ft_tolower(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		return (c - 'A' + 'a');
-	}
-	else
-	{
-		return (c);
-	}
+	write(fd, &c, 1);
 }
 
 // int	main(void)
 // {
-// 	char c;
-// 	char d;
-// 	char e;
-// 	char f;
-
-// 	c = 'A';
-// 	d = 'A';
-// 	e = '\0';
-// 	f = '\0';
-
-// 	printf("original: %c\n", tolower(c));
-// 	printf("zisaku: %c\n", ft_tolower(d));
-
-// 	printf("original: %c\n", tolower(e));
-// 	printf("zisaku: %c\n", ft_tolower(f));
-
-// 	return (0);
+// 	ft_putchar_fd('a', 1);
+// 	ft_putchar_fd('b', 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putchar_fd('c', 1);
+// 	ft_putchar_fd('\n', 1);
 // }

@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 19:52:35 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/06 19:58:08 by mesasaki         ###   ########.fr       */
+/*   Updated: 2024/05/15 21:26:19 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *b, size_t len)
 {
-	char	*p;
-	size_t	i;
+	unsigned char	*p;
+	size_t			i;
 
 	p = b;
 	i = 0;

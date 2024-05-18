@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:13:18 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/06 21:28:12 by mesasaki         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:55:36 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	*ft_memchr(const void *buf, int ch, size_t n)
 	while (count < n)
 	{
 		if (target[count] == moji)
-			return (void *)(target + count);
+			return ((void *)(target + count));
 		count++;
 	}
-	return (0);
+	return (NULL);
 }
 
 // int	main(void)
@@ -39,7 +39,8 @@ void	*ft_memchr(const void *buf, int ch, size_t n)
 // 	char *zisaku_1;
 
 // 	original = memchr(str, 256 + 2, 3);
-// 	// unsigned charだと256通りまでなので、それ以上の値の場合は256で割った余りを取得して比較している。つまり258の代わりに2を使う。下位8bitがどちらの数も同じだから
+// 	// unsigned charだと256通りまでなので、
+//それ以上の値の場合は256で割った余りを取得して比較している。つまり258の代わりに2を使う。下位8bitがどちらの数も同じだから
 // 	zisaku = ft_memchr(str, 256 + 2, 3);
 // 	printf("original: %s\n", original);
 // 	printf("zisaku: %s\n", zisaku);

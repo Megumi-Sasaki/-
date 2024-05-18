@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:35:22 by mesasaki          #+#    #+#             */
-/*   Updated: 2024/05/06 20:49:54 by mesasaki         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:12:05 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	space_or_not(char c)
 
 int	ft_atoi(const char *string)
 {
-	int	minus;
-	int	result;
+	int				minus;
+	unsigned long	result;
 
 	minus = 1;
 	result = 0;
@@ -38,10 +38,16 @@ int	ft_atoi(const char *string)
 	}
 	while (*string >= '0' && *string <= '9')
 	{
+		if (((unsigned long)LONG_MAX - (*string - '0')) / 10 < result
+			&& minus == 1)
+			return ((int)LONG_MAX);
+		if (((unsigned long)LONG_MIN - (*string - '0')) / 10 < result
+			&& minus == -1)
+			return ((int)LONG_MIN);
 		result = 10 * result + (*string - '0');
 		string++;
 	}
-	return (minus * result);
+	return (minus * (int)result);
 }
 
 // int	main(void)
@@ -61,46 +67,73 @@ int	ft_atoi(const char *string)
 // 	zisaku = ft_atoi(s); // const char *string と *stringの違いがわからない
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	s = "\t\v\n\r\f123";
 // 	i = atoi(s);
 // 	zisaku = ft_atoi(s);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	s = "0";
 // 	i = atoi(s);
 // 	zisaku = ft_atoi(s);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	s = "+0000000000000000000000000000000000000000000000000000123";
 // 	i = atoi(s);
 // 	zisaku = ft_atoi(s);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	s = "12/3";
 // 	i = atoi(s);
 // 	zisaku = ft_atoi(s);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	s = "9223372036854775809";
 // 	i = atoi(s);
-// 	zisaku = ft_atoi(s); // LongMax以上を入れると、１になってしまう
-// 	printf("i = %d\n", i);
-// 	printf("zisaku = %d\n", zisaku);
+// 	zisaku = ft_atoi(s);
+// 	printf("OVER LONG_MAX: i = %d\n", i);
+// 	printf("OVER LONG_MAX zisaku: = %d\n", zisaku);
+// 	printf("\n");
 // 	sprintf(str, "%d", INT_MAX);
 // 	i = atoi(str);
 // 	zisaku = ft_atoi(str);
-// 	printf("i = %d\n", i);
-// 	printf("zisaku = %d\n", zisaku);
+// 	printf("INT_MAX i:  = %d\n", i);
+// 	printf("INT_MAX zisaku: = %d\n", zisaku);
+// 	printf("\n");
+// 	s = "2147483648";
+// 	i = atoi(s);
+// 	zisaku = ft_atoi(s);
+// 	printf("OVER INT_MAX: i = %d\n", i);
+// 	printf("OVER INT_MAX zisaku: = %d\n", zisaku);
+// 	printf("\n");
+// 	s = "-2147483649";
+// 	i = atoi(s);
+// 	zisaku = ft_atoi(s);
+// 	printf("OVER INT_MIN: i = %d\n", i);
+// 	printf("OVER INT_MIN zisaku: = %d\n", zisaku);
+// 	printf("\n");
+// 	s = "-9223372036854775809";
+// 	i = atoi(s);
+// 	zisaku = ft_atoi(s);
+// 	printf("OVER LONG_MIN: i = %d\n", i);
+// 	printf("OVER LONG_MIN zisaku: = %d\n", zisaku);
+// 	printf("\n");
 // 	sprintf(str2, "%i", INT_MIN);
 // 	i = atoi(str2);
 // 	zisaku = ft_atoi(str2);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	sprintf(str3, "%li", LONG_MAX);
 // 	i = atoi(str3);
 // 	zisaku = ft_atoi(str3);
 // 	printf("i = %d\n", i);
 // 	printf("zisaku = %d\n", zisaku);
+// 	printf("\n");
 // 	sprintf(str4, "%li", LONG_MIN);
 // 	i = atoi(str4);
 // 	zisaku = ft_atoi(str4);
